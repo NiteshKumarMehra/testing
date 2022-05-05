@@ -16,11 +16,18 @@ await page.check('#rememberMe')
 const signIn = await page.$('#next')
 await signIn.click()
 
+const page1 = await context.newPage()
+await page1.waitForTimeout(15000);
 
-//const site = await page.locator('#Sites');
-//await expect(site).toBeVisible();
-//console.log(site)
-//await page.waitForTimeout(3000)
+
+
+await page1.goto('https://energyqapaas.azurewebsites.net/ForecastCurve/ForecastCurve')
+await page1.waitForTimeout(5000);
+//await page.click('#Company')
+//const url = await page.url()
+//expext(url).toContain('Company')
+
+await page.waitForTimeout(5000)
 
 //await page.goBack()
 //await page.waitForTimeout(2000)
